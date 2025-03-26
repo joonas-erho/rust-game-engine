@@ -1,9 +1,10 @@
-extern crate gl;
 #[allow(dead_code)]
 #[allow(unused_variables)]
+
+extern crate gl;
 extern crate glfw;
 
-use cgmath::*;
+use cgmath::{perspective, vec3, Deg, EuclideanSpace, SquareMatrix};
 use glfw::{Action, Context, GlfwReceiver, Key, OpenGlProfileHint, WindowHint, WindowMode};
 
 mod engine;

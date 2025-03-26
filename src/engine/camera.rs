@@ -1,8 +1,6 @@
 use cgmath::{vec3, InnerSpace};
 
-type Point3 = cgmath::Point3<f32>;
-type Vec3 = cgmath::Vector3<f32>;
-type Mat4 = cgmath::Matrix4<f32>;
+use super::types::*;
 
 static mut FIRST_MOUSE_MOVEMENT: bool = true;
 

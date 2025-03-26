@@ -7,7 +7,7 @@ use data::VertexArray;
 
 use super::{material::Vector3, Texture};
 
-type Mat4 = cgmath::Matrix4<f32>;
+use super::types::Mat4;
 
 pub struct Screen {
   pub vertex_array: VertexArray,

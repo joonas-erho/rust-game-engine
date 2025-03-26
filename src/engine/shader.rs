@@ -1,9 +1,9 @@
 use std::{ffi::CString, fs::read_to_string, ptr::{null, null_mut}};
 
-use cgmath::{Array, Matrix, Matrix4};
+use cgmath::{Array, Matrix};
 use gl::types::GLenum;
 
-type Vec3 = cgmath::Vector3<f32>;
+use super::types::*;
 
 #[derive(Debug)]
 pub struct Shader {
@@ -119,7 +119,7 @@ impl Shader {
     }
   }
 
-  pub fn set_mat4(&mut self, name: &str, value: Matrix4<f32>) -> () {
+  pub fn set_mat4(&mut self, name: &str, value: Mat4) -> () {
     unsafe {
       gl::UniformMatrix4fv(
         gl::GetUniformLocation(

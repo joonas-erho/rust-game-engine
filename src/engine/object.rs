@@ -11,7 +11,7 @@ use super::{
   Texture,
 };
 
-type Mat4 = cgmath::Matrix4<f32>;
+use super::types::Mat4;
 
 pub struct Object {
   pub vertex_array: VertexArray,
