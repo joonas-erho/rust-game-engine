@@ -1,0 +1,11 @@
+[package]
+name = "cogwheel"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+cgmath = "0.18.0"
+gl = "0.14"
+glfw = "0.59"
+image = "0.25.5"
+tobj = "0.1.6"
