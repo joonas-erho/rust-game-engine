@@ -1,11 +1,9 @@
 use std::mem;
-
-use cgmath::Matrix4;
 use image::GenericImageView;
 
 use crate::data::VertexArray;
 
-use super::{Camera, Shader};
+use super::{types::Mat4, Camera, Shader};
 
 pub struct Skybox {
   pub vertex_array: VertexArray,
@@ -51,7 +49,7 @@ impl Skybox {
     instance
   }
 
-  pub fn draw(&self, shader: &mut Shader, camera: &mut Camera, projection: Matrix4<f32>) -> () {
+  pub fn draw(&self, shader: &mut Shader, camera: &mut Camera, projection: Mat4) -> () {
     unsafe {
       gl::DepthFunc(gl::LEQUAL);
       shader.activate();

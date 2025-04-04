@@ -1,5 +1,6 @@
 use std::mem;
 
+#[derive(Clone)]
 pub struct VBO {
   id: u32,
 }

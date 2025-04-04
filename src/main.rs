@@ -8,7 +8,7 @@ use cgmath::{perspective, vec3, Deg, EuclideanSpace, SquareMatrix};
 use glfw::{Action, Context, GlfwReceiver, Key, OpenGlProfileHint, WindowHint, WindowMode};
 
 mod engine;
-use engine::{object::Object, screen::Screen, skybox::Skybox, *};
+use engine::{object::Object, scene::Scene, skybox::Skybox, *};
 
 mod data;
 use data::*;
@@ -24,8 +24,6 @@ fn main() {
   let mut delta_time: f64;
   let mut last_frame: f64 = 0.0;
 
-  // let mut light_pos: Vector3<f32> = vec3(1.2, 1.0, 2.0);
-
   let mut glfw = glfw::init(glfw::fail_on_errors).unwrap();
 
   // These seem to have no impact on the functionality of the program,
@@ -40,7 +38,7 @@ fn main() {
     .create_window(
       window_width,
       window_height,
-      "Real-time Rendering, Chapter 4",
+      "Cogwheel 0.0.1 Demo",
       WindowMode::Windowed,
     )
     .expect("Failed to create GLFW window.");
@@ -62,6 +60,8 @@ fn main() {
 
   let mut skybox_shader = Shader { id: 1 };
   skybox_shader.initialize("shaders/skybox.vert", "shaders/skybox.frag");
+
+  let scene = Scene::new();
 
   let cube = Object::new(
     Vertices::get_vertices(Vertices::Cube),

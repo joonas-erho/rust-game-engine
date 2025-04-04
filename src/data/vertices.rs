@@ -1,3 +1,4 @@
+#[derive(Clone)]
 pub struct VertexArray {
   // Vertices of the object. This always includes position vertices, but
   // may also include normals and texture coordinates.

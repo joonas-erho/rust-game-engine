@@ -1,6 +1,6 @@
 use image::{self, GenericImageView, ImageError};
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Texture {
   pub id: u32
 }

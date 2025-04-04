@@ -13,6 +13,7 @@ use super::{
 
 use super::types::Mat4;
 
+#[derive(Clone)]
 pub struct Object {
   pub vertex_array: VertexArray,
   pub vao: VAO,

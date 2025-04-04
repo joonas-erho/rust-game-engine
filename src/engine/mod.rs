@@ -22,3 +22,5 @@ pub mod skybox;
 pub mod rendering;
 
 pub mod types;
+
+pub mod scene;
